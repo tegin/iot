@@ -8,7 +8,7 @@ class IotDeviceInput(models.Model):
 
     _inherit = "iot.device.input"
 
-    def get_options(self, value):
+    def get_options(self):
         data = {}
         for option in self.device_id.option_ids:
             data[option.property_id.tech_name] = getattr(
