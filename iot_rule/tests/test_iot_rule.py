@@ -39,9 +39,9 @@ class TestIotRule(SavepointCase):
             }
         )
         cls.partner = cls.env["res.partner"].create({"name": "Demo partner"})
-        cls.system = cls.env["iot.system"].create({"name": "Testing"})
+        cls.system = cls.env["iot.communication.system"].create({"name": "Testing"})
         cls.device_1 = cls.env["iot.device"].create(
-            {"name": "device 1", "system_id": cls.system.id}
+            {"name": "device 1", "communication_system_id": cls.system.id}
         )
         cls.serial_of_input_1 = "serial 1"
         cls.passphrase_of_input_1 = "password 1"
@@ -59,7 +59,7 @@ class TestIotRule(SavepointCase):
             }
         )
         cls.device_2 = cls.env["iot.device"].create(
-            {"name": "device 2", "system_id": cls.system.id}
+            {"name": "device 2", "communication_system_id": cls.system.id}
         )
         cls.serial_of_input_2 = "serial 2"
         cls.passphrase_of_input_2 = "password 2"
